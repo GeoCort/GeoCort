@@ -4,21 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./src/output.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/725392aa44.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "rA6pviaY5hawoNkeN",
+              limitRate: {
+                // Set the limit rate for the application
+                id: 'app',
+                // Allow 1 request per 10s
+                throttle: 10000,
+  }
+            });
+        })();
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                document.getElementById('time').value=new Date();
+                emailjs.sendForm('service_if43gpd', 'template_fvk3t0j', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        alert("Email Sent")
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
     <title>George Cortes</title>
 </head>
-<body class="bg-zinc-900 text-stone-300 ">
-    <header class="bg-slate-200  text-zinc-600 text-xl font-semibold p-5 flex justify-between">
+<body class="bg-gradient-to-r from-zinc-900 to-gray-800 text-stone-300 ">
+    <header class="bg-zinc-100    text-zinc-800 text-xl font-semibold p-5 flex justify-between">
         <h1 class="text-zinc-800  ">George Cortes</h1>
         <nav class="*:underline underline-offset-4 ">
             <a href="/">Home</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
         </nav>
     </header>
-    <section class="hero bg-gradient-to-r from-zinc-900 to-gray-800 text-white py-20 min-h-screen">
+    <!-- Hero -->
+    <section class=" text-zinc-50 py-20 min-h-screen" id="hero">
         <div class="container mx-auto text-center">
           <h1 class="text-5xl font-bold mb-4 animate-fade-in">Full Stack Developer</h1>
-          <p class="text-xl mb-6">Building Scalable Apps with React, Node.js & PostgresSql</p>
+          <p class="text-xl mb-6">Building Scalable Apps with React, Node.js & PostgreSql</p>
           <a href="#projects" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">See My Projects</a>
           <div class="mt-8 flex justify-center gap-4">
             <img src="js-icon.svg" alt="JavaScript" class="h-10" />
@@ -27,5 +60,127 @@
           </div>
         </div>
       </section>
+      <!-- Projects -->
+    <section id="projects" class=" text-zinc-800 bg-zinc-50/95 m-10   min-h-[50vh]  border-indigo-50 py-32 pt-20 px-20  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 rounded-lg justify-items-center   ">
+        <h2 class="py-10 col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center md:text-left">Projects</h2>
+        <article class="bg-zinc-50 p-2 border-2 rounded-lg col-span-1 min-w-72 max-w-96 hover:border-2 hover:border-blue-300 transition-all">
+            <div>
+                <div class="flex justify-between items-center p-2">
+                    <h2 class="text-lg font-bold font-sans ">NadoDrive - File Uploader</h2>
+                    <a  class="text-2xl " href="https://github.com/geocort/"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="m-auto w-full rounded-lg max-h-52 border-4 bg-[url('./src/assets/topography.svg')] overflow-hidden" >
+                    <img src="./src/assets/topography.svg"  class="w-full">
+                </div>
+                <p class="m-3 ">
+                    A File upload web application with User Authentication. Built with Next.js, Cloudinary API,and PostgreSQL.
+                </p>
+                <div class="m-5 border-t-2 border-b-2 text-sm ">
+                    <span class="text-yellow-400">Javascript</span> |
+                    <span class="text-blue-700">React</span> |
+                    <span class="text-neutral-700">PostgresQl</span> |
+                    <span class="text-blue-700">Next.js</span>
+                </div>
+            </div>
+        </article>
+        <article class="bg-zinc-50 p-2 border-2 rounded-lg col-span-1 min-w-72 max-w-96 hover:border-2 hover:border-blue-300 transition-all">
+            <div>
+                <div class="flex justify-between items-center p-2">
+                    <h2 class="text-lg font-bold font-sans ">NadoDrive - File Uploader</h2>
+                    <a  class="text-2xl " href="https://github.com/geocort/"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="m-auto w-full rounded-lg max-h-52 border-4 bg-[url('./src/assets/topography.svg')] overflow-hidden" >
+                    <img src="./src/assets/topography.svg"  class="w-full">
+                </div>
+                <p class="m-3 ">
+                    A File upload web application with User Authentication. Built with Next.js, Cloudinary API,and PostgreSQL.
+                </p>
+                <div class="m-5 border-t-2 border-b-2 text-sm ">
+                    <span class="text-yellow-400">Javascript</span> |
+                    <span class="text-blue-700">React</span> |
+                    <span class="text-neutral-700">PostgresQl</span> |
+                    <span class="text-blue-700">Next.js</span>
+                </div>
+            </div>
+        </article>
+        <article class="bg-zinc-50 p-2 border-2 rounded-lg col-span-1 min-w-72 max-w-96 hover:border-2 hover:border-blue-300 transition-all">
+            <div>
+                <div class="flex justify-between items-center p-2">
+                    <h2 class="text-lg font-bold font-sans ">NadoDrive - File Uploader</h2>
+                    <a  class="text-2xl " href="https://github.com/geocort/"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="m-auto w-full rounded-lg max-h-52 border-4 bg-[url('./src/assets/topography.svg')] overflow-hidden" >
+                    <img src="./src/assets/topography.svg"  class="w-full">
+                </div>
+                <p class="m-3 ">
+                    A File upload web application with User Authentication. Built with Next.js, Cloudinary API,and PostgreSQL.
+                </p>
+                <div class="m-5 border-t-2 border-b-2 text-sm ">
+                    <span class="text-yellow-400">Javascript</span> |
+                    <span class="text-blue-700">React</span> |
+                    <span class="text-neutral-700">PostgresQl</span> |
+                    <span class="text-blue-700">Next.js</span>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- About -->
+     <section class=" m-20 rounded-lg grid grid-cols-1 lg:grid-cols-2">
+
+        <!-- About me p1 -->
+        <div class="grid-cols-1">
+            <h2 class="text-5xl font-bold text-zinc-50">About Me</h2>
+            <img class="rounded-lg min-w-96 max-w-[600px]" src="/assets/placeholder.webp"/>
+        </div>
+        <!-- About me p2  -->
+        <div class="grid-cols-1 flex flex-col gap-10 m-5  ">
+            <!-- Education -->
+            <section class=" flex gap-5 justify-center flex-col  md:flex-row items-center">
+                <article class="border-[3px]    h-48 p-5  rounded-xl  max-w-80 flex flex-col gap-2  justify-center items-center "> 
+                    <span class="text-2xl font-bold">B.S. Computer Science</span>
+                    <i class="fa-solid fa-award text-4xl  "></i>   
+                    <span class="text-2xl font-bold">Dec 2024</span>
+                </article>
+                <article class="border-[3px]    h-48 p-5  rounded-xl  max-w-80 flex flex-col gap-2  justify-center items-center "> 
+                    <span class="text-2xl font-bold">B.S. Computer Science</span>
+                    <i class="fa-solid fa-award text-4xl  "></i>   
+                    <span class="text-2xl font-bold">Dec 2024</span>
+                </article>
+            </section>
+            <div class="h-[2px]  bg-amber-50"></div>
+            <article>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque molestias, facilis distinctio ducimus, fugiat sed voluptas molestiae maiores cum architecto dolorem unde ipsum nesciunt adipisci, totam velit itaque dolor voluptate.
+                Dolor, rerum quae explicabo maxime ducimus suscipit quisquam possimus amet consectetur incidunt autem aliquid! Doloremque, maiores doloribus. Esse, est a quia blanditiis harum veritatis libero vitae. Vitae magnam aperiam molestiae!
+            </article>
+        </div>
+     </section>
+     <!-- Contact -->
+      <section id="contact" class="bg-zinc-50/95 max-h-screen py-20 m-10 rounded-lg">
+        <h2 class="pt-10  col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center ">Contact Me</h2>
+        <form id="contact-form" class="flex flex-col w-full p-10 text-zinc-800 max-w-[1000px] mx-auto">
+            <!-- To simplify the tutorial, the value is static. -->
+            <input class="border-2 p-2 rounded-md  " type="hidden" id="time" name="time" >
+            <label>Name</label>
+            <input class="border-2 p-2 rounded-md  " type="text" name="name" required>
+            <label>Email</label>
+            <input class="border-2 p-2 rounded-md  " type="email" name="email" required>
+            <label>Subject</label>
+            <input class="border-2 p-2 rounded-md  " type="text" name="title" required>
+            <label>Message</label>
+            <textarea name="message" required class="border-2" rows="10"></textarea>
+            <button type="submit" class="bg-zinc-800 text-slate-50 py-3 font-semibold mx-[30%] mt-5 rounded-md ">Submit</button>
+        </form>
+      </section>
+      <!-- Footer -->
+      <footer class="bg-zinc-50 py-6 border-t border-zinc-200">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-zinc-600 text-sm">
+          <p>&copy; 2025 Your Name. All rights reserved.</p>
+          <div class="mt-2 sm:mt-0 flex space-x-4">
+            <a href="https://github.com/GeoCort" class="hover:text-zinc-900">GitHub</a>
+            <a href="#" class="hover:text-zinc-900">LinkedIn</a>
+            <a href="#" class="hover:text-zinc-900">Contact</a>
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
