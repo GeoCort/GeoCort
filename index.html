@@ -37,8 +37,8 @@
     </script>
     <title>George Cortes</title>
 </head>
-<body class="bg-gradient-to-r from-zinc-900 to-gray-800 text-stone-300 ">
-    <header class="bg-zinc-100    text-zinc-800 text-xl font-semibold p-5 flex justify-between">
+<body class="bg-gradient-to-r from-zinc-900 to-zinc-800 text-stone-300 ">
+    <header class="bg-zinc-50 border-zinc-200 border-2 shadow-md    text-zinc-800 text-xl font-semibold p-5 flex justify-between">
         <h1 class="text-zinc-800  ">George Cortes</h1>
         <nav class="*:underline underline-offset-4 ">
             <a href="/">Home</a>
@@ -128,7 +128,7 @@
      <section class=" m-20 rounded-lg grid grid-cols-1 lg:grid-cols-2">
 
         <!-- About me p1 -->
-        <div class="grid-cols-1">
+        <div class="grid-cols-1 flex flex-col gap-5">
             <h2 class="text-5xl font-bold text-zinc-50">About Me</h2>
             <img class="rounded-lg min-w-96 max-w-[600px]" src="/assets/placeholder.webp"/>
         </div>
@@ -147,17 +147,18 @@
                     <span class="text-2xl font-bold">Dec 2024</span>
                 </article>
             </section>
-            <div class="h-[2px]  bg-amber-50"></div>
-            <article>
+            <div class="h-[4px] bg-zinc-100"></div>
+            <article class="mx-10 text-lg font-semibold">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque molestias, facilis distinctio ducimus, fugiat sed voluptas molestiae maiores cum architecto dolorem unde ipsum nesciunt adipisci, totam velit itaque dolor voluptate.
                 Dolor, rerum quae explicabo maxime ducimus suscipit quisquam possimus amet consectetur incidunt autem aliquid! Doloremque, maiores doloribus. Esse, est a quia blanditiis harum veritatis libero vitae. Vitae magnam aperiam molestiae!
             </article>
         </div>
      </section>
      <!-- Contact -->
-      <section id="contact" class="bg-zinc-50/95 max-h-screen py-20 m-10 rounded-lg">
+      <section id="contact" class=" max-h-screen py-20 m-10 rounded-lg">
+        <form id="contact-form" class="flex flex-col w-full p-10 bg-zinc-50 text-zinc-800 max-w-[1000px] mx-auto rounded-lg shadow-2xl py-20">
         <h2 class="pt-10  col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center ">Contact Me</h2>
-        <form id="contact-form" class="flex flex-col w-full p-10 text-zinc-800 max-w-[1000px] mx-auto">
+            
             <!-- To simplify the tutorial, the value is static. -->
             <input class="border-2 p-2 rounded-md  " type="hidden" id="time" name="time" >
             <label>Name</label>
