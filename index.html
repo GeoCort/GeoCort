@@ -38,20 +38,30 @@
     </script>
     <title>George Cortes</title>
 </head>
-<body class="bg-gradient-to-r from-zinc-800 to-zinc-700 text-stone-300  ">
-    <header class="bg-zinc-50 border-zinc-200 border-2 shadow-md    text-zinc-800 text-xl font-semibold p-5 flex justify-between">
-        <h1 class="text-zinc-800  ">George Cortes</h1>
-        <nav class="*:underline underline-offset-4 ">
+<body class=" text-stone-300 hero ">
+    <header class="bg-zinc-50 border-zinc-200 border-b-2 shadow-md    text-zinc-800 text-xl font-semibold  flex justify-between items-center">
+        <h1 class="text-zinc-800 p-5 ">George Cortes</h1>
+        <nav class="*:underline underline-offset-4 hidden lg:block">
             <a href="/">Home</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
         </nav>
+        <div class="relative m-0 ">
+            <i class="fa-solid fa-bars text-3xl mr-5 cursor-pointer " id="hamburger"></i>
+            <nav id="mobileNav" class="absolute hidden text-zinc-50 flex-col right-0 overflow-hidden top-0 bg-zinc-900 h-screen w-72 transition-al duration-75 rounded-tl-lg   ">
+                <i id="innerMenuClose" class="fa-solid fa-x ml-auto  cursor-pointer   mr-10 mt-5 text-3xl pb-5 "></i>
+                <a class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 "  href="/">Home</a>
+                <a  class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 " href="#projects">Projects</a>
+                <a class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 "  href="#contact">Contact</a>
+                <a  class="p-2 py-3 text-center hover:bg-amber-50 hover:text-zinc-800 " href="#about">About</a>
+            </nav>
+        </div>
     </header>
     <!-- Hero -->
-    <section class=" text-zinc-800 hero m-5 bg-center rounded-xl py-20 min-h-screen" id="hero">
+    <section class="bg-gradient-to-r from-zinc-200 to-zinc-50 text-zinc-800 border-2 border-zinc-50 m-10 bg-center rounded-xl py-20 min-h-screen" id="hero">
         <div class="container mx-auto text-center">
-          <h1 class="text-6xl md:text-7xl font-bold mb-4 animate-fade-in animate-bounce">Full Stack Developer</h1>
+          <h1 class="text-6xl md:text-7xl font-bold mb-4 animate-fade-in ">Full Stack Developer</h1>
           <p class="text-xl mb-6">Building Scalable Apps with React, Node.js & PostgreSql</p>
           <a href="#projects" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">See My Projects</a>
           <div class="mt-8 flex justify-center gap-4">
@@ -67,7 +77,7 @@
         </div>
       </section>
       <!-- Projects -->
-    <section id="projects" class=" text-zinc-800 bg-zinc-50/95 m-5 md:m-20   min-h-[50vh]  border-indigo-50 py-32 pt-20 px-20  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 rounded-lg justify-items-center   ">
+    <section id="projects" class=" text-zinc-800 bg-zinc-50/95 m-10 md:m-20   min-h-[50vh]  border-indigo-50 py-32 pt-20 px-20  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 rounded-lg justify-items-center   ">
         <h2 class="py-10 col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center md:text-left">Projects</h2>
         <article class="bg-zinc-50 p-2 border-2 rounded-lg col-span-1 min-w-72 max-w-96 hover:border-2 hover:border-blue-300 transition-all">
             <div>
@@ -131,7 +141,7 @@
         </article>
     </section>
     <!-- About -->
-     <section class=" m-20 rounded-lg grid grid-cols-1 lg:grid-cols-2">
+     <section class=" m-10 bg-gradient-to-r from-zinc-500 to-zinc-900 p-10 pl-14 rounded-lg grid grid-cols-1 lg:grid-cols-2">
 
         <!-- About me p1 -->
         <div class="grid-cols-1 flex flex-col gap-5">
@@ -163,8 +173,8 @@
         </div>
      </section>
      <!-- Contact -->
-      <section id="contact" class=" max-h-screen py-20 m-10 rounded-lg">
-        <form id="contact-form" class="flex flex-col w-full p-10 bg-zinc-50 text-zinc-800 max-w-[1000px] mx-auto rounded-lg shadow-2xl py-20">
+      <section id="contact" class=" max-h-screen mb-20  m-10 rounded-lg">
+        <form id="contact-form" class="flex flex-col w-full p-10 py-32 bg-zinc-50 text-zinc-800 max-w-[1000px] mx-auto rounded-lg shadow-2xl">
         <h2 class="pt-10  col-span-1 md:col-span-2 lg:col-span-3 text-5xl font-bold text-zinc-800 text-center ">Contact Me</h2>
             
             <!-- To simplify the tutorial, the value is static. -->
@@ -183,13 +193,14 @@
       <!-- Footer -->
       <footer class="bg-zinc-50 py-6 border-t border-zinc-200">
         <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-zinc-600 text-sm">
-          <p>&copy; 2025 Your Name. All rights reserved.</p>
+          <p>&copy; 2025 George Cortes. All rights reserved.</p>
           <div class="mt-2 sm:mt-0 flex space-x-4">
             <a href="https://github.com/GeoCort" class="hover:text-zinc-900">GitHub</a>
             <a href="#" class="hover:text-zinc-900">LinkedIn</a>
-            <a href="#" class="hover:text-zinc-900">Contact</a>
+            <a href="#contact" class="hover:text-zinc-900">Contact</a>
           </div>
         </div>
       </footer>
+      <script src="./src//navScripts.js"></script>
 </body>
 </html>
